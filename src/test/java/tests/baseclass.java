@@ -3,6 +3,7 @@ package tests;
 import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -12,7 +13,7 @@ public class baseclass {
 	
 	public AppiumDriver<MobileElement> driver;
 
-	@BeforeTest
+	@BeforeSuite
 	public void setup() {
 
 		try {

@@ -2,7 +2,9 @@ package tests;
 
 import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import io.appium.java_client.AppiumDriver;
@@ -13,7 +15,7 @@ public class baseclass {
 	
 	public AppiumDriver<MobileElement> driver;
 
-	@BeforeSuite
+	@BeforeClass
 	public void setup() {
 
 		try {
@@ -26,8 +28,8 @@ public class baseclass {
 				caps.setCapability("appActivity", "com.ekoapp.splash.SplashActivity");
 				caps.setCapability("app", "/Users/sohel_mlbd/Downloads/ekos.apk");
 				caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
-				//caps.setCapability("fullReset", false);
-				//caps.setCapability("noReset", true);
+				caps.setCapability("fullReset", false);
+				caps.setCapability("noReset", true);
 
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");
 			driver = new AppiumDriver<MobileElement>(url,caps);
@@ -42,7 +44,7 @@ public class baseclass {
 		}
 	}
 
-	@AfterSuite
+	@AfterClass
 	public void teardown() {
 		System.out.println("this is 3");
 		//driver.removeApp("com.google.android.calculator");

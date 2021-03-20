@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-	<test thread-count="1" name="Test">
-		<classes>
-			<class name="tests.login_test" />
-			<class name="tests.tutorial_test" />
-			<class name="tests.groupchat_test" />
-		</classes>
-	</test> <!-- Test -->
+<suite thread-count="1" name="chat testing suite" annotations="JDK" parallel="tests">
+  <test name="Test">
+    <classes>
+      <class name="tests.creategroupchat_test"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test1">
+    <classes>
+      <class name="tests.chatfunc_test"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test2">
+    <classes>
+      <class name="tests.addnewmember_test"/>
+    </classes>
+  </test> <!-- Test -->
+  
 </suite> <!-- Suite -->

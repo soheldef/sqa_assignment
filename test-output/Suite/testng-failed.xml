@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
-  <test thread-count="1" name="Test">
+  <test thread-count="5" name="Test">
     <classes>
-      <class name="tests.login_test"/>
-      <class name="tests.tutorial_test"/>
-      <class name="tests.groupchat_test"/>
+      <class name="tests.creategroupchat_test"/>
+      <class name="tests.chatfunc_test"/>
+      <class name="tests.addnewmember_test"/>
     </classes>
   </test> <!-- Test -->
   <test name="Test(failed)" parallel="none">
     <classes>
-      <class name="tests.login_test">
+      <class name="tests.creategroupchat_test">
+        <methods>
+          <include name="Tutorial"/>
+          <include name="teardown"/>
+          <include name="groupchatCreate_test"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.creategroupchat_test -->
+      <class name="tests.chatfunc_test">
+        <methods>
+          <include name="leavegroup_test"/>
+          <include name="createtopic_test"/>
+          <include name="sendmessage_test"/>
+          <include name="setup"/>
+          <include name="logout_test"/>
+        </methods>
+      </class> <!-- tests.chatfunc_test -->
+      <class name="tests.addnewmember_test">
         <methods>
           <include name="teardown"/>
+          <include name="addmember"/>
           <include name="setup"/>
-          <include name="Login_test"/>
         </methods>
-      </class> <!-- tests.login_test -->
-      <class name="tests.tutorial_test">
-        <methods>
-          <include name="Tutorial"/>
-        </methods>
-      </class> <!-- tests.tutorial_test -->
-      <class name="tests.groupchat_test">
-        <methods>
-          <include name="Tutorial"/>
-        </methods>
-      </class> <!-- tests.groupchat_test -->
+      </class> <!-- tests.addnewmember_test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

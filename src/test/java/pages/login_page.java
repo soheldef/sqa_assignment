@@ -19,9 +19,9 @@ public class login_page {
 	@AndroidFindBy (id = "login_password_edittext") MobileElement password_field;
 	@AndroidFindBy (id = "button") MobileElement signin_button;
 	
-	public void SignIn() {
-		username_field.sendKeys("chattarika");
-		password_field.sendKeys("password");
+	public void SignIn(String username , String password) {
+		username_field.sendKeys(username);
+		password_field.sendKeys(password);
 		
 	}
 	

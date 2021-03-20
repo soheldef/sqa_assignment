@@ -21,7 +21,6 @@ public class groupchatdetail_page {
 	@AndroidFindBy (id = "workspace_name_edittext") MobileElement workspace_name_edittext;
 	@AndroidFindBy (id = "add_group_detail_next_textview") MobileElement CreateChat_button;
 	
-
 	public void createchat_finalize() {
 		workspace_name_edittext.sendKeys("Engineer");
 		CreateChat_button.click();

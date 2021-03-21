@@ -20,14 +20,18 @@ public class chat_page {
 	@AndroidFindBy(id = "messageEditText") MobileElement meaasge_box;
 	@AndroidFindBy(id = "sticker_icon") MobileElement sticker_icon;
 	@AndroidFindBy(className = "android.widget.ImageView") List <WebElement> stickerlist;
-	//	@AndroidFindBy(id = "permission_allow_button") MobileElement photo_access;
-	//	@AndroidFindBy(id = "photo_thumbnail") MobileElement photo_thumbnail;
+	@AndroidFindBy(className = "android.widget.Button") List <WebElement> photo_access;
+	@AndroidFindBy(id = "photo_thumbnail") MobileElement photo_thumbnail;
 	@AndroidFindBy(id = "action_topic_list") MobileElement topic_icon;
 	@AndroidFindBy(accessibility = "Topics") MobileElement create_topic_icon;
 	@AndroidFindBy(id = "view_new_compose_view_topic_name") MobileElement topic_name_box;
 	@AndroidFindBy(id = "button") MobileElement topic_create_button;
 	@AndroidFindBy(accessibility = "Navigate up") MobileElement topic_close_icon;
 	@AndroidFindBy(id = "toolbar_title_textview") MobileElement group_members;
+	@AndroidFindBy(id = "image_icon") MobileElement photo_icon;
+	@AndroidFindBy(id = "check_view") MobileElement select_photo;
+	@AndroidFindBy(id = "button_apply") MobileElement confirm_photo;
+	@AndroidFindBy(id = "multiple_image_send_button") MobileElement send_photo;
 
 	public void text_message() {
 		meaasge_box.sendKeys("test");
@@ -39,15 +43,21 @@ public class chat_page {
 		stickerlist.get(16).click();
 		stickerlist.get(16).click();
 	}
+	
+	public void photo_permission() {
+		photo_icon.click();
+		photo_access.get(0).click();
+	}
+	
+	public void photo_message() {
+		photo_icon.click();
+		photo_thumbnail.click();
+		select_photo.click();
+		confirm_photo.click();
+		send_photo.click();
+		
+	}
 
-	//	public void photo_message() {
-	//		stickerlist.get(10).click();
-	//		photo_access.click();
-	//		driver.terminateApp("com.ekoapp.ekos");
-	//		driver.activateApp("com.ekoapp.ekos");
-	//		photo_thumbnail.click();
-	//		//stickerlist.get(0).click();
-	//	}
 
 	public void create_topic() {
 		topic_icon.click();

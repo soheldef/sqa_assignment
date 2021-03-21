@@ -30,6 +30,7 @@ public class creategroupchat_test extends baseclass{
 		recent_page = new recent_page(driver);
 		Searchuser_page = new Searchuser_page(driver);
 		groupchatdetail_page = new groupchatdetail_page(driver);
+		chat_page = new chat_page(driver);
 
 		//Login to account
 		login_page.SignIn("chattarika", "password");
@@ -51,6 +52,8 @@ public class creategroupchat_test extends baseclass{
 		groupchatdetail_page.createchat_finalize();
 		String group_title = driver.findElement(By.id("toolbar_title_textview")).getText();
 		Assert.assertEquals(group_title, "Engineer");
+		chat_page.photo_permission();
+		Thread.sleep(3000);
 	}
 	
 	

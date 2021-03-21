@@ -49,8 +49,9 @@ public class chatfunc_test extends baseclass{
 		Assert.assertEquals(true, driver.findElement(By.id("sticker")).isDisplayed());
 		
 		// send photo message
-		//chat_page.photo_message();
-		//		Assert.assertEquals(asd, expected_text);
+		chat_page.photo_message();
+		Thread.sleep(2000);
+		Assert.assertEquals(true, driver.findElement(By.id("image")).isDisplayed());
 	
 		//Create topic for group "Engineer"
 		chat_page.create_topic();

@@ -2,52 +2,52 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="chat testing suite" duration-ms="214935" started-at="2021-03-21T05:37:05Z" finished-at="2021-03-21T05:40:40Z">
+  <suite name="chat testing suite" duration-ms="224855" started-at="2021-03-21T06:37:40Z" finished-at="2021-03-21T06:41:25Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="92438" started-at="2021-03-21T05:37:05Z" finished-at="2021-03-21T05:38:37Z">
+    <test name="Test" duration-ms="92908" started-at="2021-03-21T06:37:40Z" finished-at="2021-03-21T06:39:13Z">
       <class name="tests.creategroupchat_test">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.creategroupchat_test@1190200a]" name="setup" is-config="true" duration-ms="23612" started-at="2021-03-21T11:37:05Z" finished-at="2021-03-21T11:37:29Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.creategroupchat_test@1190200a]" name="setup" is-config="true" duration-ms="15693" started-at="2021-03-21T12:37:40Z" finished-at="2021-03-21T12:37:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Login_test()[pri:1, instance:tests.creategroupchat_test@1190200a]" name="Login_test" duration-ms="67606" started-at="2021-03-21T11:37:29Z" finished-at="2021-03-21T11:38:36Z">
+        <test-method status="PASS" signature="Login_test()[pri:1, instance:tests.creategroupchat_test@1190200a]" name="Login_test" duration-ms="75951" started-at="2021-03-21T12:37:56Z" finished-at="2021-03-21T12:39:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login_test -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:tests.creategroupchat_test@1190200a]" name="teardown" is-config="true" duration-ms="1111" started-at="2021-03-21T11:38:36Z" finished-at="2021-03-21T11:38:37Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:tests.creategroupchat_test@1190200a]" name="teardown" is-config="true" duration-ms="1152" started-at="2021-03-21T12:39:12Z" finished-at="2021-03-21T12:39:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.creategroupchat_test -->
     </test> <!-- Test -->
-    <test name="Test1" duration-ms="63762" started-at="2021-03-21T05:38:42Z" finished-at="2021-03-21T05:39:46Z">
+    <test name="Test1" duration-ms="74124" started-at="2021-03-21T06:39:18Z" finished-at="2021-03-21T06:40:32Z">
       <class name="tests.chatfunc_test">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.chatfunc_test@ed7f8b4]" name="setup" is-config="true" duration-ms="4922" started-at="2021-03-21T11:38:42Z" finished-at="2021-03-21T11:38:47Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.chatfunc_test@ed7f8b4]" name="setup" is-config="true" duration-ms="4963" started-at="2021-03-21T12:39:18Z" finished-at="2021-03-21T12:39:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="sendmsg_createtopic_test()[pri:1, instance:tests.chatfunc_test@ed7f8b4]" name="sendmsg_createtopic_test" duration-ms="58147" started-at="2021-03-21T11:38:47Z" finished-at="2021-03-21T11:39:45Z">
+        <test-method status="PASS" signature="sendmsg_createtopic_test()[pri:1, instance:tests.chatfunc_test@ed7f8b4]" name="sendmsg_createtopic_test" duration-ms="68059" started-at="2021-03-21T12:39:23Z" finished-at="2021-03-21T12:40:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendmsg_createtopic_test -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:tests.chatfunc_test@ed7f8b4]" name="teardown" is-config="true" duration-ms="689" started-at="2021-03-21T11:39:45Z" finished-at="2021-03-21T11:39:46Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:tests.chatfunc_test@ed7f8b4]" name="teardown" is-config="true" duration-ms="1096" started-at="2021-03-21T12:40:31Z" finished-at="2021-03-21T12:40:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.chatfunc_test -->
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="48687" started-at="2021-03-21T05:39:51Z" finished-at="2021-03-21T05:40:40Z">
+    <test name="Test2" duration-ms="47774" started-at="2021-03-21T06:40:37Z" finished-at="2021-03-21T06:41:25Z">
       <class name="tests.addnewmember_test">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.addnewmember_test@5c90e579]" name="setup" is-config="true" duration-ms="4840" started-at="2021-03-21T11:39:51Z" finished-at="2021-03-21T11:39:56Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.addnewmember_test@5c90e579]" name="setup" is-config="true" duration-ms="4129" started-at="2021-03-21T12:40:37Z" finished-at="2021-03-21T12:40:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addmember()[pri:1, instance:tests.addnewmember_test@5c90e579]" name="addmember" duration-ms="42893" started-at="2021-03-21T11:39:56Z" finished-at="2021-03-21T11:40:39Z">
+        <test-method status="PASS" signature="addmember()[pri:1, instance:tests.addnewmember_test@5c90e579]" name="addmember" duration-ms="42291" started-at="2021-03-21T12:40:42Z" finished-at="2021-03-21T12:41:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addmember -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:tests.addnewmember_test@5c90e579]" name="teardown" is-config="true" duration-ms="949" started-at="2021-03-21T11:40:39Z" finished-at="2021-03-21T11:40:40Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:tests.addnewmember_test@5c90e579]" name="teardown" is-config="true" duration-ms="1349" started-at="2021-03-21T12:41:24Z" finished-at="2021-03-21T12:41:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

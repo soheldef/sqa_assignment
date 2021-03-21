@@ -37,8 +37,6 @@ public class baseclass {
 
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");
 			driver = new AppiumDriver<MobileElement>(url,caps);
-			//driver.get("http://www.ally.com");
-			//      driver.close();
 		}
 
 		catch(Exception exp){

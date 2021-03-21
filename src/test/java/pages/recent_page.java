@@ -2,6 +2,7 @@ package pages;
 
 import java.util.List;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.PageFactory;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

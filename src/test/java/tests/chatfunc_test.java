@@ -2,13 +2,24 @@ package tests;
 
 import static org.testng.Assert.assertTrue;
 
+import java.awt.Dimension;
+import java.time.Duration;
 import java.util.List;
 
+import javax.swing.text.TableView;
+import javax.swing.text.View;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.remote.server.handler.interactions.touch.Scroll;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.touch.LongPressOptions;
 import pages.settings_page;
 import pages.recent_page;
 import pages.login_page;
@@ -51,7 +62,7 @@ public class chatfunc_test extends baseclass{
 		// send sticker message
 		chat_page.sticker_message();
 		Assert.assertEquals(true, driver.findElement(By.id("sticker")).isDisplayed());
-		
+	
 		// send photo message
 		chat_page.photo_message();
 		Thread.sleep(2000);
@@ -62,10 +73,18 @@ public class chatfunc_test extends baseclass{
 		String topic_title = driver.findElement(By.id("toolbar_title_textview")).getText();
 		Assert.assertEquals(topic_title, "Meeting");
 		chat_page.goback();
+		
+	
 	
 		//leave group
-		//chat_page.group_detail();
-		//groupinfo_page.Leave_group();
+//		chat_page.group_detail();
+//		TouchActions action = new TouchActions(driver);
+//
+//		Thread.sleep(3000);
+//		action.move(625, -2900);
+//		Thread.sleep(3000);
+//		
+//		groupinfo_page.Leave_group();
 		
 		//logout
 		Thread.sleep(2000);
@@ -75,7 +94,7 @@ public class chatfunc_test extends baseclass{
 		settings_page.logoutbutton();
 		Thread.sleep(2000);
 	}
-	
+
 	@Test(priority = 2,enabled=true)
 	public void addmember() throws InterruptedException   {
 		login_page = new login_page(driver);

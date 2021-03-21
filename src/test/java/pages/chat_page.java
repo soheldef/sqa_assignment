@@ -77,5 +77,7 @@ public class chat_page {
 	public void group_detail() {
 		group_members.click();
 	}	
+	
+	
 }
 

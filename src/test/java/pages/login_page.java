@@ -8,31 +8,25 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class login_page {
-	
+
 	AppiumDriver<MobileElement> driver;
 
 	public login_page(AppiumDriver<MobileElement> driver) {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-	
+
 	@AndroidFindBy (id = "login_username_edittext") MobileElement username_field;
 	@AndroidFindBy (id = "login_password_edittext") MobileElement password_field;
 	@AndroidFindBy (id = "button") MobileElement signin_button;
-	
+
 	public void SignIn(String username , String password) {
 		username_field.sendKeys(username);
-		password_field.sendKeys(password);
-		
+		password_field.sendKeys(password);	
 	}
-	
-	public void loginbutton() {
-		signin_button.click();
-		
-	}
-	
-	
 
-	
+	public void loginbutton() {
+		signin_button.click();	
+	}	
 }
-	
-	
+
+

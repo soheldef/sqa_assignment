@@ -1,5 +1,9 @@
 package tests;
 
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.settings_page;
 import pages.recent_page;
@@ -26,47 +30,45 @@ public class chatfunc_test extends baseclass{
 	profile_page profile_page;
 	
 	@Test(priority = 1,enabled=true)
-	public void sendmessage_test() throws InterruptedException   {
+	public void sendmsg_createtopic_test() throws InterruptedException  {
 		chat_page = new chat_page(driver);
 		recent_page = new recent_page(driver);
-		
-		recent_page.selectgroupchat();
-		chat_page.text_message();
-		chat_page.sticker_message();
-		//chat_page.photo_message();
-		//		Assert.assertEquals(asd, expected_text);
-
-	}
-	
-	@Test(priority = 2,enabled=true)
-	public void createtopic_test() throws InterruptedException   {
-		chat_page = new chat_page(driver);
-
-		chat_page.create_topic();
-	}
-	
-	@Test(priority = 3,enabled=false)
-	public void leavegroup_test() throws InterruptedException   {
-		chat_page = new chat_page(driver);
 		groupinfo_page = new groupinfo_page(driver);
-
-		chat_page.group_detail();
-		//groupinfo_page.Leave_group();
-	}
-	
-	@Test(priority = 4,enabled=true)
-	public void logout_test() throws InterruptedException   {
-		recent_page = new recent_page(driver);
 		more_page = new more_page(driver);
 		settings_page = new settings_page (driver);
 		profile_page = new profile_page(driver);
 		
+		// select newly created group and send text message
+		recent_page.selectgroupchat();
+		chat_page.text_message();
+		String message_text = driver.findElement(By.id("message")).getText();
+		assertTrue(message_text.contains("test"));
+		
+		// send sticker message
+		chat_page.sticker_message();
+		Assert.assertEquals(true, driver.findElement(By.id("sticker")).isDisplayed());
+		
+		// send photo message
+		//chat_page.photo_message();
+		//		Assert.assertEquals(asd, expected_text);
+	
+		//Create topic for group "Engineer"
+		chat_page.create_topic();
+		String topic_title = driver.findElement(By.id("toolbar_title_textview")).getText();
+		Assert.assertEquals(topic_title, "Meeting");
+		chat_page.goback();
+	
+		//leave group
+		//chat_page.group_detail();
+		//groupinfo_page.Leave_group();
+		
+		//logout
+		Thread.sleep(2000);
 		recent_page.moreoptions();
 		more_page.profile_select();	
 		profile_page.clicksettings();
 		settings_page.logoutbutton();
-		Thread.sleep(4000);
-
+		Thread.sleep(1000);
 	}
 	
 }

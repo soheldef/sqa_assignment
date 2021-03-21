@@ -13,6 +13,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.server.handler.interactions.touch.Scroll;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -44,6 +46,7 @@ public class chatfunc_test extends baseclass{
 	settings_page settings_page;
 	profile_page profile_page;
 	
+	
 	@Test(priority = 1,enabled=true)
 	public void sendmsg_createtopic_test() throws InterruptedException  {
 		chat_page = new chat_page(driver);
@@ -52,6 +55,7 @@ public class chatfunc_test extends baseclass{
 		more_page = new more_page(driver);
 		settings_page = new settings_page (driver);
 		profile_page = new profile_page(driver);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		
 		// select newly created group and send text message
 		recent_page.selectgroupchat();
@@ -65,7 +69,7 @@ public class chatfunc_test extends baseclass{
 	
 		// send photo message
 		chat_page.photo_message();
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("image")));
 		Assert.assertEquals(true, driver.findElement(By.id("image")).isDisplayed());
 	
 		//Create topic for group "Engineer"
@@ -74,8 +78,6 @@ public class chatfunc_test extends baseclass{
 		Assert.assertEquals(topic_title, "Meeting");
 		chat_page.goback();
 		
-	
-	
 		//leave group
 //		chat_page.group_detail();
 //		TouchActions action = new TouchActions(driver);
@@ -92,7 +94,7 @@ public class chatfunc_test extends baseclass{
 		more_page.profile_select();	
 		profile_page.clicksettings();
 		settings_page.logoutbutton();
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_username_edittext")));
 	}
 
 	@Test(priority = 2,enabled=true)
@@ -105,20 +107,20 @@ public class chatfunc_test extends baseclass{
 		more_page = new more_page(driver);
 		profile_page = new profile_page(driver);
 		settings_page = new settings_page(driver);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 
 		//Login to account
 		login_page.SignIn("narongsak", "password");
 		driver.navigate().back();
 		login_page.loginbutton();
-		Thread.sleep(4000);
 
-		if (driver.findElement(By.id("view_onboarding_item_title")).isDisplayed()) {
-			String welcome_title = driver.findElement(By.id("view_onboarding_item_title")).getText();
-			Assert.assertEquals(welcome_title, "Hi Narongsak");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("view_onboarding_item_title")));
+		
+		String welcome_title = driver.findElement(By.id("view_onboarding_item_title")).getText();
+		Assert.assertEquals(welcome_title, "Hi Narongsak");
 
-			//View turotial pages
-			tutorial_page.tutorialscreen();
-		}
+		//View turotial pages
+		tutorial_page.tutorialscreen();
 
 		//Add new user name "Janjira Automate" to group
 		recent_page.selectgroupchat2();

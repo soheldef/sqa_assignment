@@ -1,6 +1,8 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.recent_page;
@@ -36,15 +38,16 @@ public class creategroupchat_test extends baseclass{
 		login_page.SignIn("chattarika", "password");
 		driver.navigate().back();
 		login_page.loginbutton();
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("view_onboarding_item_title")));
 
-		if (driver.findElement(By.id("view_onboarding_item_title")).isDisplayed()) {
-			String welcome_title = driver.findElement(By.id("view_onboarding_item_title")).getText();
-			Assert.assertEquals(welcome_title, "Hi Chattarika");
+		String welcome_title = driver.findElement(By.id("view_onboarding_item_title")).getText();
+		Assert.assertEquals(welcome_title, "Hi Chattarika");
 
-			//View tutorial pages
-			tutorial_page.tutorialscreen();
-		}
+		//View tutorial pages
+		tutorial_page.tutorialscreen();
 
 		// Create group chat with name "Engineer"
 		recent_page.chatcreate();

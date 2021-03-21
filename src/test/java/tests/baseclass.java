@@ -1,5 +1,6 @@
 package tests;
 
+import java.io.File;
 import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
@@ -20,13 +21,16 @@ public class baseclass {
 
 		try {
 			DesiredCapabilities caps = new DesiredCapabilities();
+			    File classpathRoot = new File(System.getProperty("user.dir"));
+			    File appDir = new File(classpathRoot, "/src/test/resources/apk/ekos.apk");
+			    System.out.println(appDir); 
 
 				caps.setCapability("platformName", "Android");
 				caps.setCapability("platformVersion", "10");
 				caps.setCapability("deviceName", "emulator-55546");
 				caps.setCapability("appPackage", "com.ekoapp.ekos");
 				caps.setCapability("appActivity", "com.ekoapp.splash.SplashActivity");
-				caps.setCapability("app", "/Users/sohel_mlbd/Downloads/ekos.apk");
+				caps.setCapability("app", appDir.getAbsolutePath());
 				caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 				caps.setCapability("fullReset", false);
 				caps.setCapability("noReset", true);

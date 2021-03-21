@@ -1,6 +1,12 @@
 package tests;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import io.appium.java_client.MobileElement;
 import pages.login_page;
 import pages.recent_page;
 import pages.tutorial_page;
@@ -28,13 +34,20 @@ public class addnewmember_test extends baseclass{
 		login_page.SignIn("narongsak", "password");
 		driver.navigate().back();
 		login_page.loginbutton();
-		Thread.sleep(3000);
+		
+		Thread.sleep(6000);
+		String welcome_title = driver.findElement(By.id("view_onboarding_item_title")).getText();
+		Assert.assertEquals(welcome_title, "Hi Narongsak");
+		
 		tutorial_page.tutorialscreen();
 		recent_page.selectgroupchat2();
 		chat_page.group_detail();
-		groupinfo_page.addnewuser();;
+		groupinfo_page.addnewuser();
+		
+		List<MobileElement> users = (List<MobileElement>) driver.findElements(By.className("android.widget.TextView"));
+		String name = users.get(11).getText();
+		Assert.assertEquals(name, "Janjira Automate");
 		Thread.sleep(3000);
-		//		Assert.assertEquals(asd, expected_text);
 
 	}
 	

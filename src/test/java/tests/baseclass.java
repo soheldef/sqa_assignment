@@ -46,8 +46,6 @@ public class baseclass {
 
 	@AfterClass
 	public void teardown() {
-		System.out.println("this is 3");
-		//driver.removeApp("com.google.android.calculator");
 		driver.quit();
 	}
 

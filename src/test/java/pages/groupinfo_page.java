@@ -33,6 +33,8 @@ public class groupinfo_page {
 	
 	@AndroidFindBy(id = "content") MobileElement addbtn;
 	
+	@AndroidFindBy(accessibility = "Navigate up") MobileElement back_btn;
+	
 	
 	
 	public void Leave_group() {
@@ -45,6 +47,7 @@ public class groupinfo_page {
 		adduser_btn.click();
 		selectuser.get(10).click();
 		addbtn.click();
+		back_btn.click();
 	}
 	
 		

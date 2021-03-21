@@ -11,9 +11,4 @@
       <class name="tests.chatfunc_test"/>
     </classes>
   </test> <!-- Test1 -->
-  <test name="Test2">
-    <classes>
-      <class name="tests.addnewmember_test"/>
-    </classes>
-  </test> <!-- Test2 -->
 </suite> <!-- Failed suite [chat testing suite] -->

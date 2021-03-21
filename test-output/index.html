@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-chat_testing_suite">
-                    <span class="test-stats">3 tests</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -107,7 +107,7 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-chat_testing_suite" title="tests.addnewmember_test" hash-for-method="addmember">addmember</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-chat_testing_suite" title="tests.chatfunc_test" hash-for-method="addmember">addmember</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -135,24 +135,16 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="sendmsg_createtopic_test">
-                  </a> <!-- sendmsg_createtopic_test -->
-                  <span class="method-name">sendmsg_createtopic_test</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-chat_testing_suite-class-passed -->
-          <div class="suite-chat_testing_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.addnewmember_test</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
                   <a name="addmember">
                   </a> <!-- addmember -->
                   <span class="method-name">addmember</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sendmsg_createtopic_test">
+                  </a> <!-- sendmsg_createtopic_test -->
+                  <span class="method-name">sendmsg_createtopic_test</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -192,11 +184,6 @@
       &lt;class name=&quot;tests.chatfunc_test&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test1 --&gt;
-  &lt;test name=&quot;Test2&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;tests.addnewmember_test&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test2 --&gt;
 &lt;/suite&gt; &lt;!-- chat testing suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -212,9 +199,6 @@
               </li>
               <li>
                 <span class="test-name">Test1 (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Test2 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -244,15 +228,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Login_test')
 data.setCell(0, 2, 'tests.creategroupchat_test')
-data.setCell(0, 3, 75951);
+data.setCell(0, 3, 77303);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'sendmsg_createtopic_test')
 data.setCell(1, 2, 'tests.chatfunc_test')
-data.setCell(1, 3, 68059);
+data.setCell(1, 3, 68486);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'addmember')
-data.setCell(2, 2, 'tests.addnewmember_test')
-data.setCell(2, 3, 42291);
+data.setCell(2, 2, 'tests.chatfunc_test')
+data.setCell(2, 3, 42945);
 window.suiteTableData['chat_testing_suite']= { tableData: data, tableDiv: 'times-div-chat_testing_suite'}
 return data;
 }
@@ -290,41 +274,30 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Login_test</span>
-                <span class="method-start">15695 ms</span>
+                <span class="method-start">16019 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">91741 ms</span>
+                <span class="method-start">93404 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.chatfunc_test</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">97932 ms</span>
+                <span class="method-start">99307 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">sendmsg_createtopic_test</span>
-                <span class="method-start">102896 ms</span>
+                <span class="method-start">103382 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">170960 ms</span>
-              </div> <!-- configuration-class after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">tests.addnewmember_test</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">setup</span>
-                <span class="method-start">177070 ms</span>
-              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">addmember</span>
-                <span class="method-start">181200 ms</span>
+                <span class="method-start">171872 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">223494 ms</span>
+                <span class="method-start">214819 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

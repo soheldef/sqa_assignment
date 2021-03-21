@@ -38,7 +38,7 @@ public class creategroupchat_test extends baseclass{
 		login_page.loginbutton();
 		Thread.sleep(4000);
 
-		if (driver.findElement(By.id("view_onboarding_item_title")).isDisplayed()== true) {
+		if (driver.findElement(By.id("view_onboarding_item_title")).isDisplayed()) {
 			String welcome_title = driver.findElement(By.id("view_onboarding_item_title")).getText();
 			Assert.assertEquals(welcome_title, "Hi Chattarika");
 

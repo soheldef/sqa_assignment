@@ -19,9 +19,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import pages.settings_page;
 import pages.recent_page;
 import pages.login_page;
@@ -80,12 +83,13 @@ public class chatfunc_test extends baseclass{
 		
 		//leave group
 //		chat_page.group_detail();
-//		TouchActions action = new TouchActions(driver);
-//
-//		Thread.sleep(3000);
-//		action.move(625, -2900);
-//		Thread.sleep(3000);
 //		
+//		new TouchAction((PerformsTouchActions) driver)
+//		.press(PointOption.point(500, -2800))
+//		.waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
+//		.moveTo(PointOption.point(500, 700))
+//		.release().perform();
+ 		
 //		groupinfo_page.Leave_group();
 		
 		//logout
